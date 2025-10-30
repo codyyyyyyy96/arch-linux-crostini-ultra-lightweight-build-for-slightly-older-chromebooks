@@ -1,28 +1,30 @@
-
 import React, { useState } from 'react';
 import { Sidebar } from './components/Sidebar';
-import { OptimizerView } from './components/OptimizerView';
-import { QuickCommandView } from './components/QuickCommandView';
-import { ChatView } from './components/ChatView';
-import { SearchView } from './components/SearchView';
+import { SystemSetupView } from './components/SystemSetupView';
+import { LocalAiView } from './components/LocalAiView';
+import { OptimizationsView } from './components/OptimizationsView';
+import { MigrationView } from './components/MigrationView';
+import { SecurityView } from './components/SecurityView';
 import type { ViewMode } from './types';
 import { Header } from './components/Header';
 
 const App: React.FC = () => {
-  const [activeView, setActiveView] = useState<ViewMode>('optimizer');
+  const [activeView, setActiveView] = useState<ViewMode>('migration');
 
   const renderActiveView = () => {
     switch (activeView) {
-      case 'optimizer':
-        return <OptimizerView />;
-      case 'quick':
-        return <QuickCommandView />;
-      case 'chat':
-        return <ChatView />;
-      case 'search':
-        return <SearchView />;
+      case 'migration':
+        return <MigrationView />;
+      case 'setup':
+        return <SystemSetupView />;
+      case 'localAi':
+        return <LocalAiView />;
+      case 'optimizations':
+        return <OptimizationsView />;
+      case 'security':
+        return <SecurityView />;
       default:
-        return <OptimizerView />;
+        return <MigrationView />;
     }
   };
 

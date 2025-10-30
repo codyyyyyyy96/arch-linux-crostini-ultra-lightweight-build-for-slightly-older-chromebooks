@@ -1,7 +1,6 @@
-
 import React from 'react';
 import type { ViewMode } from '../types';
-import { CpuChipIcon, BoltIcon, ChatBubbleLeftRightIcon, MagnifyingGlassIcon, TerminalIcon } from './icons/Icons';
+import { CpuChipIcon, TerminalIcon, SparklesIcon, SwitchHorizontalIcon, ShieldIcon } from './icons/Icons';
 
 interface SidebarProps {
   activeView: ViewMode;
@@ -10,14 +9,15 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) => {
   const navItems = [
-    { id: 'optimizer', label: 'Optimizer', icon: <CpuChipIcon /> },
-    { id: 'quick', label: 'Quick Command', icon: <BoltIcon /> },
-    { id: 'chat', label: 'Expert Chat', icon: <ChatBubbleLeftRightIcon /> },
-    { id: 'search', label: 'Web Search', icon: <MagnifyingGlassIcon /> },
+    { id: 'migration', label: 'Migration Guide', icon: <SwitchHorizontalIcon /> },
+    { id: 'setup', label: 'System Setup', icon: <TerminalIcon /> },
+    { id: 'optimizations', label: 'Optimizations', icon: <SparklesIcon /> },
+    { id: 'security', label: 'Security Hardening', icon: <ShieldIcon /> },
+    { id: 'localAi', label: 'AI Assistant Setup', icon: <CpuChipIcon /> },
   ];
 
   return (
-    <nav className="bg-gray-900/70 backdrop-blur-sm border-r border-gray-700/50 p-2 md:p-4 flex flex-col justify-between">
+    <nav className="bg-gray-900/70 backdrop-blur-sm border-r border-gray-700/50 p-2 md:p-4 flex flex-col">
       <div>
         <div className="flex items-center justify-center gap-2 p-2 mb-6 border-b border-gray-700/50">
           <TerminalIcon className="h-8 w-8 text-cyan-400" />
@@ -41,9 +41,6 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) =
           ))}
         </ul>
       </div>
-       <div className="p-2 border-t border-gray-700/50 text-center">
-         <p className="hidden md:block text-xs text-gray-500">Powered by Gemini</p>
-       </div>
     </nav>
   );
 };

@@ -1,7 +1,6 @@
-
 import React from 'react';
 import type { ViewMode } from '../types';
-import { CpuChipIcon, BoltIcon, ChatBubbleLeftRightIcon, MagnifyingGlassIcon } from './icons/Icons';
+import { CpuChipIcon, TerminalIcon, SparklesIcon, SwitchHorizontalIcon, ShieldIcon } from './icons/Icons';
 
 interface HeaderProps {
     activeView: ViewMode;
@@ -9,10 +8,11 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ activeView }) => {
     const viewDetails = {
-        optimizer: { title: 'System Optimizer', description: 'Generate detailed configurations for maximum performance.', icon: <CpuChipIcon /> },
-        quick: { title: 'Quick Command', description: 'Get fast, low-latency answers for simple tasks.', icon: <BoltIcon /> },
-        chat: { title: 'Expert Chat', description: 'Have a conversation with an Arch Linux expert.', icon: <ChatBubbleLeftRightIcon /> },
-        search: { title: 'Web Search', description: 'Get up-to-date information from the web.', icon: <MagnifyingGlassIcon /> },
+        migration: { title: 'Lubuntu to Arch Linux Migration', description: 'Your first step: Replace the default container with Arch.', icon: <SwitchHorizontalIcon /> },
+        setup: { title: 'Core System Setup', description: 'Install essential tools for your new Arch Linux environment.', icon: <TerminalIcon /> },
+        optimizations: { title: 'System Optimizations', description: 'Fine-tune your Arch Linux for better performance.', icon: <SparklesIcon /> },
+        security: { title: 'Security Hardening', description: 'Establish a strong security baseline for your new system.', icon: <ShieldIcon /> },
+        localAi: { title: 'AI Assistant Setup (Sidekick)', description: 'Configure your powerful, local command-line AI assistant.', icon: <CpuChipIcon /> },
     };
 
     const currentView = viewDetails[activeView];
