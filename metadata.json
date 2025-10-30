@@ -1,0 +1,5 @@
+{
+  "name": "Crostini Arch Optimizer",
+  "description": "An AI-powered assistant to help you create the most optimized, lightweight, and performant Arch Linux build for a system constrained by 4GB of RAM and running within a Crostini environment.",
+  "requestFramePermissions": []
+}
